@@ -1,0 +1,13 @@
+<!-- The following line brings all of the HTML code that is in layout.html -->
+{% extends "layout.html" %}
+
+<!-- The following code allows us to insert HTML within the block we defined -->
+{% block body %}
+
+    <!-- We can use a Jinja if condition to see if the parameter name is empty -->
+    <!--
+    hello, {{ name }} -->
+
+    hello, {%if name %}{{ name }}{% else %}world{% endif %}
+
+{% endblock %}

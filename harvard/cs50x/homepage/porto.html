@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--;
+|*************************************************************************************************|
+| Specifications:                                                                                 |
+|*************************************************************************************************|
+| Implement in your homepage directory a website that must:                                       |
+|                                                                                                 |
+| 1.- Contain at least four different .html pages, at least one of which is index.html (the main  |
+|     page of your website), and it should be possible to get from any page on your website to    |
+|     any other page by following one or more hyperlinks.                                         |
+|                                                                                                 |
+| 2.- Use at least ten (10) distinct HTML tags besides <html>, <head>, <body>, and <title>. Using |
+|     some tag (e.g., <p>) multiple times still counts as just one (1) of those ten!              |
+|                                                                                                 |
+|*************************************************************************************************|
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js/portugal1.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>
+            Porto
+        </title>
+        <script>
+          /// Get the elements by ID
+          /// Wait until the document is loaded
+          document.addEventListener("DOMContentLoaded", function() {
+            let home = document.getElementById("home");
+            let lisbon = document.getElementById("lisbon");
+            let porto = document.getElementById("porto");
+            let algarve = document.getElementById("algarve");
+            setMenu(home, lisbon, porto, algarve);
+          });
+      </script>
+    </head>
+    <body>
+        <!--; Page Top Section -->
+        <div id="topSection">
+            <p class="myHeader">
+                Portugal -
+                <!--; Uses Bootstrap class -->
+                <small class="text-body-secondary fs-1 opacity-75 myHeaderSideTitle" id="subTitle1"></small>
+            </p>
+        </div>
+
+        <!--; Bootstrap Navigation buttons -->
+        <div id="navigation">
+            <a id="home" href="index.html" class="btn btn-primary">Home</a>
+            <a id="lisbon" href="lisbon.html" class="btn btn-primary">Lisbon</a>
+            <a id="porto" href="porto.html" class="btn btn-primary">Porto</a>
+            <a id="algarve" href="algarve.html" class="btn btn-primary">Algarve</a>
+        </div>
+
+        <!--; Now let's add two containers side by side.  On one side, add the accordion and on
+              the other side add images. -->
+        <div id="mainBody">
+            <div id="accordionFrame">
+                <!--; Add accordion code here-->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          O Porto
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Located along the Douro River estuary in northern Portugal. </strong>
+                           Porto is one of the oldest European centers and its core was proclaimed a World Heritage Site by UNESCO in 1996,
+                           as the "Historic Centre of Porto, Luiz I Bridge and Monastery of Serra do Pilar". The historic area is also a National
+                           Monument of Portugal. The western part of its urban area extends to the coastline of the Atlantic Ocean. Its settlement
+                            dates back to the 2nd century BC when it was an outpost of the Roman Empire. Its combined Celtic-Latin name,
+                           Portus Cale, has been referred to as the origin of the name Portugal, based on transliteration and oral
+                           evolution from Latin.
+                          <br><br>Port wine, one of Portugal's most famous exports, is named after Porto, since the metropolitan area,
+                          and in particular the cellars of Vila Nova de Gaia, were responsible for the packaging, transport, and export
+                          of fortified wine. Porto is on the Portuguese Way path of the Camino de Santiago. In 2014 and 2017, Porto was
+                          elected The Best European Destination by the Best European Destinations Agency.
+                           <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Culture
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Porto shared the designation European Culture Capital with Rotterdam. </strong>
+                          In 2001, Porto shared the designation European Culture Capital with Rotterdam. In the scope of these events, the
+                          construction of the major concert hall space Casa da Música, designed by the Dutch architect Rem Koolhaas,
+                          was initiated and finished in 2005.
+                          <br><br>The first Portuguese moving pictures were taken in Porto by Aurélio da Paz dos Reis and shown there on 12
+                          November 1896 in the Teatro do Príncipe Real do Porto, less than a year after the first public presentation by
+                          Auguste and Louis Lumière. The country's first movie studios Invicta Filmes was also erected in Porto in 1917 and
+                          was open from 1918 to 1927 in the area of Carvalhido. Manoel de Oliveira, a Portuguese film director and the oldest
+                          director in the world to be active until his death in 2015, was from Porto. Fantasporto is an international film
+                          festival organized in Porto every year. The DCEU film The Suicide Squad (2021) written and directed by James Gunn
+                          based on a Suicide Squad story, shows the city twice in the movie, in which shows us Daniela Melchior a Portuguese
+                          actress, who portrays Ratcatcher 2 in which the character is the heart of the film,
+                          a Portuguese version of Ratcatcher.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Tourism
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          Over the last few years, Porto has experienced significant tourism increases, which may be partly linked to
+                          the Ryanair hub at Francisco de Sá Carneiro Airport. Porto won the European Best Destination 2012, 2014 and
+                          2017 awards.
+                          <br><br>
+                          The city received 2.8 million overnight visitors and 1.4 million day trippers between January and November 2017,
+                          with 73% from other countries. Tourism revenue has been increasing by over 11%, according to a 2018 report.
+                          <br><br>According to a February 2019 report, over 10% of economic activity in Porto is generated by tourism. The hotel
+                           occupancy rate in 2017 was 77%. A scholarly study published in June 2019 stated that "Porto is one of the fastest-growing
+                            European tourist destinations that has experienced exponential growth in the demand for city-break tourists".
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <!--; Image section -->
+            <div id="imageFrame">
+                <img src="images/porto1.jpg" class="imgSmall" alt="Rio de Ouro">
+                <img src="images/porto2.jpg" class="imgSmall" alt="Torre de Belem">
+            </div>
+
+        </div>
+
+    </body>
+</html>

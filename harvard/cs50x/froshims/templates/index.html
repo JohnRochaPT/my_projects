@@ -1,0 +1,18 @@
+<!-- The following code tells this page to extend the layout.html file and replaces a block of code, or
+     more than one block if needed using Jinja. -->
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Register</h1>
+    <!-- method = post stops the form from seeing in the autocomplete who signed in before if autocomplete
+         on -->
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name"
+        type="text">
+        {% for sport in sports %}
+            <input name="sport" type="checkbox" value="{{ sport }}"> {{ sport }}
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}

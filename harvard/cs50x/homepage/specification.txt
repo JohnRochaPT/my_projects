@@ -1,0 +1,41 @@
+HTML Tags
+  1.- <meta>
+      Tag was used to tell the browsers the character set being used on the site
+  2.- <script>
+      Tag used to link javascript files to the HTML or to run a JavaScript
+  3.- <link>
+      Tag used to tell the page to link to a CSS file I created as well as Bootstrap and Google Fonts
+  4.- <p>
+      Tag used to apply a style on Text where the style is in the style.css file
+  5.- <head>
+      Container for metadata
+  6.- <title>
+      Tag used to set the title of the page
+  7.- <body>
+      Tag defines the document's main body
+  8.- <div>
+      Tag defines division of any section
+  9.- <a>
+      Tag allows to define hyperlinks on the webpage
+ 10.- <h2>
+      Used to apply headings in the HTML
+
+CSS Properties
+  1.- Class .myHeader
+      Defines the style font and color for the header of the page
+  2.- Class .myHeaderSideTitle
+      Defines the sub title font and color for the header of the page
+  3.- Name #navigation
+      Defines the boundaries of the bootstrap menu buttons I am using
+  4.- Name #accordionFrame
+      Defines the boundaries of the container for the boostrap accordion
+  5.- Class .imgSmall
+      Defines the size of images
+
+Description
+I used Boostrap to handle my menu buttons as well as the body accordions.  I used JavaScript to
+handle the behavior of the page titles, such as what is the title, as well as the which navigation
+button should be active on any page.
+
+
+

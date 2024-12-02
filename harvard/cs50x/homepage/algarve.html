@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--;
+|*************************************************************************************************|
+| Specifications:                                                                                 |
+|*************************************************************************************************|
+| Implement in your homepage directory a website that must:                                       |
+|                                                                                                 |
+| 1.- Contain at least four different .html pages, at least one of which is index.html (the main  |
+|     page of your website), and it should be possible to get from any page on your website to    |
+|     any other page by following one or more hyperlinks.                                         |
+|                                                                                                 |
+| 2.- Use at least ten (10) distinct HTML tags besides <html>, <head>, <body>, and <title>. Using |
+|     some tag (e.g., <p>) multiple times still counts as just one (1) of those ten!              |
+|                                                                                                 |
+|*************************************************************************************************|
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js/portugal1.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>
+            Algarve
+        </title>
+        <script>
+          /// Get the elements by ID
+          /// Wait until the document is loaded
+          document.addEventListener("DOMContentLoaded", function() {
+            let home = document.getElementById("home");
+            let lisbon = document.getElementById("lisbon");
+            let porto = document.getElementById("porto");
+            let algarve = document.getElementById("algarve");
+            setMenu(home, lisbon, porto, algarve);
+          });
+      </script>
+    </head>
+    <body>
+        <!--; Page Top Section -->
+        <div id="topSection">
+            <p class="myHeader">
+                Portugal -
+                <!--; Uses Bootstrap class -->
+                <small class="text-body-secondary fs-1 opacity-75 myHeaderSideTitle" id="subTitle1"></small>
+            </p>
+        </div>
+
+        <!--; Bootstrap Navigation buttons -->
+        <div id="navigation">
+            <a id="home" href="index.html" class="btn btn-primary">Home</a>
+            <a id="lisbon" href="lisbon.html" class="btn btn-primary">Lisbon</a>
+            <a id="porto" href="porto.html" class="btn btn-primary">Porto</a>
+            <a id="algarve" href="algarve.html" class="btn btn-primary">Algarve</a>
+        </div>
+
+        <!--; Now let's add two containers side by side.  On one side, add the accordion and on
+              the other side add images. -->
+        <div id="mainBody">
+            <div id="accordionFrame">
+                <!--; Add accordion code here-->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Portuguese Riviera
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Algarve is one of Europe's favorite summer destinations.</strong>
+                          It was here that, in the 15th century, the Portuguese set off on the epic journey that led them to discover
+                          other peoples and cultures… and it is in the Algarve that we cheerfully welcome many of our visitors. Even
+                          the climate is mild and sunny all year round!
+                          <br><br>There’s no shortage of high quality beaches either. Sandy stretches as far as the eye can see,
+                          framed by golden cliffs, virtually deserted islands marking the boundary between Ria Formosa and the sea, and
+                          small coves sheltered by the rocks. The ocean, in every shade of blue and mostly calm and warm, invites you for
+                          long swims and to indulge in water sports.
+                           <small class="text-body-secondary fs-6 opacity-50"><i>source: visitportugal.com</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Climate
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>The Algarve as a whole is one of the warmest places of Southern Europe.</strong>
+                          With an Atlantic influenced Mediterranean climate, it has mild wet winters and warm to very hot, dry summers. It is
+                          overall the sunniest region in Europe, with annual sunshine values ranging from 2600 h in the Monchique Range, to
+                          values well above 3100 h on the southern coast.
+                          <br><br>Generally, winter sees only subtle differences in daily maxima along the coast, mostly between 16 and 17 °C
+                          (61 and 63 °F), though temperatures as high as 25 °C (77 °F) have been recorded. Conversely, overnight lows are higher
+                          in the west, with Sagres and Vila do Bispo averaging 9–10 °C (48–50 °F), whilst to the east, averages are lower and
+                          7–8 °C (45–46 °F) is more common. Temperatures very rarely fall below freezing (< 0 °C (32 °F)). On the interior,
+                          nights are usually cooler, averaging 4–5 °C (39–41 °F).
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Tourism and attractiveness for expats
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>In the 1960s, the Algarve became a popular destination for tourists. </strong>
+                          Mainly from the United Kingdom which still is the origin of the largest group of foreigners in the
+                          Algarve. It has since become a common destination for people from Spain, France, Germany, the Netherlands,
+                          Ireland, Belgium, Switzerland, Italy,and the US[87] not only as tourists who visit the Algarve but also as
+                          residing expats who settle in the region and buy property there. The Algarve's mild climate and hours of
+                          sunshine per year have attracted interest from Portuguese and other European people wishing to have a
+                          holiday home or residence in the region. Being a region of Portugal, and therefore in the European Union,
+                          any EU citizen has the right to freely buy property and reside with little formality in the Algarve.
+                          Algarve-based publications and newspapers are written in English specifically for this community.
+                          <br><br>
+                          Tourist attractions in the region include its beaches, Mediterranean climate, safety, cuisine, and
+                          relatively low prices. The Algarve region has garnered international acclaim, winning the World's Leading
+                          Beach Destination title twice, in 2020 and 2021, and being named Europe's Leading Beach Destination nine
+                          times between 2012 and 2022, as recognized by the World Travel Awards™. Well-known beaches in the Algarve
+                          include Praia da Luz, Praia da Rocha, Marinha Beach, Armação de Pêra, Praia dos Pescadores, Quarteira,
+                          Vale do Lobo, Fuzeta, Barril Beach, Manta Rota and Monte Gordo. A well-known spa town is Caldas de Monchique.
+                          In addition to its natural features and beaches, the Algarve has invested in the creation of a network of
+                          golf courses. The Algarve is also popular for religious tourism, notably pilgrimages to the Sanctuary of
+                          Our Lady of Piety (best known as the Sovereign Mother), a Marian shrine dedicated to the patron saint of
+                          Loulé, that attract thousands of pilgrims of the Catholic faith to the city, or minor pilgrimages of
+                          faithful Catholics to the site of putative apparitions of Our Lady Mother of Goodness which had supposedly
+                          occurred in 1999 near the village of São Marcos da Serra.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <!--; Image section -->
+            <div id="imageFrame">
+                <img src="images/algarve1.jpg" class="imgSmall" alt="Sunny Algarve">
+                <img src="images/algarve2.jpg" class="imgSmall" alt="Fin do mundo">
+            </div>
+
+        </div>
+
+    </body>
+</html>

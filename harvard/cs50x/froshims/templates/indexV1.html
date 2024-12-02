@@ -1,0 +1,27 @@
+<!-- The following code tells this page to extend the layout.html file and replaces a block of code, or
+     more than one block if needed using Jinja. -->
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Register</h1>
+    <!-- method = post stops the form from seeing in the autocomplete who signed in before if autocomplete
+         on -->
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name"
+        type="text">
+        <!-- A drop down menu in HTML is select -->
+        <select name="sport">
+            <!-- We can add a default that is disabled so that none of th options are available-->
+            <option disabled selected value="">Select a sport</option>
+            <!-- Use Jinjs code, similar to Python, to define all the dropdown values.  We can
+                 present a value to the user and pass a different value, defined in the value
+                 parameter below to the flask server
+                 Option with dropdown -->
+             {% for sport in sports %}
+                 <option value="{{ sport }}">{{ sport }}</option>
+             {% endfor %}
+        </select>
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}

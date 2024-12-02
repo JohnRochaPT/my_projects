@@ -1,0 +1,71 @@
+/*; CSS Facts
+1.- ID Tags - When referencing tag IDs, we need to add a hash tag to the name
+2.- Margins:
+    margin: (Top)px (Right)px (Bottom)px (left)px;
+    margin: (Top)px (Right)px (Bottom)px;
+    margin: (Top)px (Right)px
+*/
+
+
+body {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.myHeader {
+    font-size: 56px;
+    color: #046A38;
+}
+
+.myHeaderSideTitle {
+    color: #DA291C;
+}
+
+#topSection {
+
+    margin: 5px;
+    height: 90px;
+    /*; Padding the the space between the text and the container */
+    padding-left: 2px;
+    /*; background-color: #E0E0E0;*/
+}
+
+
+#navigation {
+
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    padding-top: 0.1rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.1rem;
+    /*; background-color: #E0E0E0;*/
+}
+
+#accordionFrame {
+    /*;background-color: #E0E0E0; */
+    width: 75%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 0px;
+    margin-bottom: 2px;
+    float: left;
+}
+
+#imageFrame {
+    /*;background-color: #E0E0E0; */
+    padding-left: 1px;
+    width: 24%;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    float: right;
+}
+
+.imgSmall {
+    width: 300px;
+
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js/portugal1.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>
+            Portugal
+        </title>
+        <script>
+            /// Get the elements by ID
+            /// Wait until the document is loaded
+            document.addEventListener("DOMContentLoaded", function() {
+              let home = document.getElementById("home");
+              let lisbon = document.getElementById("lisbon");
+              let porto = document.getElementById("porto");
+              let algarve = document.getElementById("algarve");
+              setMenu(home, lisbon, porto, algarve);
+            });
+        </script>
+    </head>
+    <body>
+        <!--; Page Top Section -->
+        <div id="topSection">
+            <p class="myHeader">
+                Portugal -
+                <!--; Uses Bootstrap class -->
+                <small class="text-body-secondary fs-1 opacity-75 myHeaderSideTitle" id="subTitle1"></small>
+            </p>
+        </div>
+
+        <!--; Bootstrap Navigation buttons -->
+        <div id="navigation">
+            <a id="home" href="index.html" class="btn btn-primary">Home</a>
+            <a id="lisbon" href="lisbon.html" class="btn btn-primary">Lisbon</a>
+            <a id="porto" href="porto.html" class="btn btn-primary">Porto</a>
+            <a id="algarve" href="algarve.html" class="btn btn-primary">Algarve</a>
+        </div>
+
+        <!--; Now let's add two containers side by side.  On one side, add the accordion and on
+              the other side add images. -->
+        <div id="mainBody">
+            <div id="accordionFrame">
+                <!--; Add accordion code here-->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Birth of an empire - 1143
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Portugal is a southern European country on the Iberian Peninsula.</strong>
+                          Its location on the Atlantic Ocean has influenced many aspects of its culture: <code>salt cod and grilled sardines</code>
+                           are national dishes, the Algarve's beaches are a major destination and much of the nation’s architecture dates to
+                           the 1500s–1800s, when Portugal had a powerful maritime empire.
+                           <br><br>Portuguese Colonial Empire (Império Colonial Português), was composed of the overseas colonies, factories,
+                           and later overseas territories, governed by the Kingdom of Portugal, and later the Republic of Portugal.
+                           It was one of the longest-lived colonial empires in European history, lasting 584 years from the conquest of
+                           Ceuta in North Africa in 1415 to the transfer of sovereignty over Macau to China in 1999.
+                           The empire began in the 15th century, and from the early 16th century it stretched across the globe, with bases
+                           in Africa, North America, South America, and various regions of Asia and Oceania.
+                           <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Age of Discovery
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>The Portuguese Empire originated at the beginning of the Age of Discovery.</strong>
+                          The power and influence of the Kingdom of Portugal would eventually expand across the globe. In the wake of the
+                          Reconquista, Portuguese sailors began exploring the coast of Africa and the Atlantic archipelagos in 1418–1419,
+                          using recent developments in navigation, cartography, and maritime technology such as the caravel,
+                          with the aim of finding a sea route to the source of the lucrative spice trade. In 1488, Bartolomeu Dias rounded
+                          the Cape of Good Hope, and in 1498 Vasco da Gama reached India. In 1500, either by an accidental landfall or by the
+                          crown's secret design, Pedro Álvares Cabral reached what would be Brazil.
+                          <br><br>Over the following decades, Portuguese sailors continued to explore the coasts and islands of East Asia,
+                          establishing forts and factories as they went. By 1571, a string of naval outposts connected Lisbon to Nagasaki
+                          along the coasts of Africa, the Middle East, and South Asia. This commercial network and the colonial trade had a
+                          substantial positive impact on Portuguese economic growth (1500–1800) when it accounted for about a fifth of
+                          Portugal's per-capita income.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Masters of the 7 seas
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Treaty of Tordesillas (1494) - World strong super power</strong>
+                           Christopher Columbus's 1492 discovery for Spain of the New World, which he believed to be Asia, led to disputes
+                           between the Spanish and the Portuguese. These were eventually settled by the Treaty of Tordesillas in 1494,
+                           which divided the world outside of Europe in an exclusive duopoly between the Portuguese and the Spanish
+                           along a north–south meridian 370 leagues, or 970 miles (1,560 km), west of the Cape Verde islands.
+                           However, as it was not possible at the time to correctly measure longitude, the exact boundary was disputed
+                           by the two countries until 1777.
+                          <br><br>
+                          Marinha Portuguesa The Portuguese Navy (Portuguese: Marinha Portuguesa), also known as the Portuguese War Navy
+                          (Marinha de Guerra Portuguesa) or as the Portuguese Armada (Armada Portuguesa), is the navy of the Portuguese
+                          Armed Forces. Chartered in 1317 by King Dinis of Portugal, it is the oldest continuously serving navy in the world;
+                          in 2017, the Portuguese Navy commemorated the 700th anniversary of its official creation.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <!--; Image section -->
+            <div id="imageFrame">
+                <img src="images/portugalMain1.jpg" class="imgSmall" alt="Portugal's map">
+                <img src="images/manofwar.jpg" class="imgSmall" alt="Marinha Portuguesa">
+            </div>
+
+        </div>
+
+    </body>
+</html>

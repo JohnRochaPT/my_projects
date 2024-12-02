@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--;
+|*************************************************************************************************|
+| Specifications:                                                                                 |
+|*************************************************************************************************|
+| Implement in your homepage directory a website that must:                                       |
+|                                                                                                 |
+| 1.- Contain at least four different .html pages, at least one of which is index.html (the main  |
+|     page of your website), and it should be possible to get from any page on your website to    |
+|     any other page by following one or more hyperlinks.                                         |
+|                                                                                                 |
+| 2.- Use at least ten (10) distinct HTML tags besides <html>, <head>, <body>, and <title>. Using |
+|     some tag (e.g., <p>) multiple times still counts as just one (1) of those ten!              |
+|                                                                                                 |
+|*************************************************************************************************|
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js/portugal1.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>
+            Lisbon
+        </title>
+        <script>
+          /// Get the elements by ID
+          /// Wait until the document is loaded
+          document.addEventListener("DOMContentLoaded", function() {
+            let home = document.getElementById("home");
+            let lisbon = document.getElementById("lisbon");
+            let porto = document.getElementById("porto");
+            let algarve = document.getElementById("algarve");
+            setMenu(home, lisbon, porto, algarve);
+          });
+      </script>
+    </head>
+    <body>
+        <!--; Page Top Section -->
+        <div id="topSection">
+            <p class="myHeader">
+                Portugal -
+                <!--; Uses Bootstrap class -->
+                <small class="text-body-secondary fs-1 opacity-75 myHeaderSideTitle" id="subTitle1"></small>
+            </p>
+        </div>
+
+        <!--; Bootstrap Navigation buttons -->
+        <div id="navigation">
+            <a id="home" href="index.html" class="btn btn-primary">Home</a>
+            <a id="lisbon" href="lisbon.html" class="btn btn-primary">Lisbon</a>
+            <a id="porto" href="porto.html" class="btn btn-primary">Porto</a>
+            <a id="algarve" href="algarve.html" class="btn btn-primary">Algarve</a>
+        </div>
+
+        <!--; Now let's add two containers side by side.  On one side, add the accordion and on
+              the other side add images. -->
+        <div id="mainBody">
+            <div id="accordionFrame">
+                <!--; Add accordion code here-->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Portugal's Capital
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Lisbon is one of the oldest cities in the world. </strong>
+                           The second-oldest European capital city (after Athens), predating other modern European capitals by centuries.
+                            Settled by pre-Celtic tribes and later founded and civilized by the Phoenicians, Julius Caesar made it a municipium called
+                            Felicitas Julia,[8] adding the term to the name Olissipo. After the fall of the Roman Empire, it was ruled by a series of
+                            Germanic tribes from the 5th century, most notably the Visigoths. Later it was captured by the Moors in the 8th century.
+                            In 1147, Afonso Henriques conquered the city and in 1255, it became Portugal's capital, replacing Coimbra.
+                            It has since been the political, economic, and cultural centre of the country.
+                            <br><br>
+                            Lisbon is recognised as an alpha-level global city because of its importance in finance, commerce, fashion, media,
+                            entertainment, arts, international trade, education, and tourism. Lisbon is amongst the two Portuguese cities (the other
+                            being Porto) to be recognised as a global city, and it is also home to three companies in the Global 2000 (EDP Group,
+                            Galp Energia and Jerónimo Martins). Lisbon is one of the major economic centres in Europe, with a growing financial
+                            sector, with PSI-20 being part of Euronext, the largest center for debt and funds listings in the world. The Lisbon region
+                            has a higher GDP PPP per capita than any other region in Portugal. Its GDP PPP amounts to US$179 billion and thus $61,713
+                            per capita. The city occupies the 40th place of highest gross earnings in the world and, with almost 21,000 millionaires,
+                            is the 11th European city by number of millionaires and the 14th by number of billionaires. Most of the headquarters of
+                            multinational corporations in Portugal are located in the Lisbon area.
+                           <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Economy
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>Richest city in Portugal.</strong>
+                          The Lisbon region is the wealthiest region in Portugal and it is well above the European Union's GDP per capita average –
+                          it produces 45% of the Portuguese GDP.
+                          <br><br>Lisbon's economy is based primarily on the tertiary sector. Most of the headquarters of multinationals operating in
+                          Portugal are concentrated in the Grande Lisboa Subregion, especially in the Oeiras municipality. The Lisbon metropolitan
+                          area is heavily industrialized, especially the south bank of the Tagus river (Rio Tejo). The lisbonite industry has very
+                          large sectors in oil, as refineries are found just across the Tagus, textile mills, shipyards and fishing.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            November, 1st 1755
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>On 1 November 1755, the city was destroyed by another devastating earthquake. </strong>
+                          Eartquake killed an estimated 30,000 to 40,000 Lisbon residents of a population estimated at between 200,000 and 275,000,
+                           and destroyed 85 percent of the city's structures. Among several important buildings of the city, the Ribeira Palace and
+                           the Hospital Real de Todos os Santos were lost. In coastal areas, such as Peniche, situated about 80 km (50 mi) north of
+                           Lisbon, many people were killed by the following tsunami.
+                           <br><br>By 1755, Lisbon was one of the largest cities in Europe; the catastrophic event shocked the whole of Europe and
+                           left a deep impression on its collective psyche. Voltaire wrote a long poem, Poême sur le désastre de Lisbonne, shortly
+                           after the quake, and mentioned it in his 1759 novel Candide (indeed, many argue that this critique of optimism was
+                           inspired by that earthquake). Oliver Wendell Holmes Sr. also mentions it in his 1857 poem, The Deacon's Masterpiece, or
+                           The Wonderful One-Hoss Shay.
+                          <small class="text-body-secondary fs-6 opacity-50"><i>source: wikipedia</i></small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <!--; Image section -->
+            <div id="imageFrame">
+                <img src="images/torre.jpg" class="imgSmall" alt="Torre de Belem">
+                <img src="images/portugalcitiesmap.jpg" class="imgSmall" alt="Oporto">
+            </div>
+
+        </div>
+
+    </body>
+</html>

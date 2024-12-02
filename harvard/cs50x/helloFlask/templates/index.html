@@ -1,0 +1,12 @@
+<!-- The following line brings all of the HTML code that is in layout.html -->
+{% extends "layout.html" %}
+
+<!-- The following code allows us to insert HTML within the block we defined -->
+{% block body %}
+
+    <form action="/" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+
+{% endblock %}
