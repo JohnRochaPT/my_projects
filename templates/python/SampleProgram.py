@@ -299,6 +299,7 @@ class Kit():
 def main():
     # > This is an inline code comment.
     Kit.clear_scr()
+    print('Hello World')
 
 
 #
