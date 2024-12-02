@@ -1,0 +1,30 @@
+/*;************************************************************************************************
+CSS Facts
+   1.- Margins, padding and other settings that are top, right, bottom, left.
+     1.1.- Usually follows clockwise
+        With 4 parameters ==> margin: (Top)px (Right)px (Bottom)px (left)px;
+        With 3 parameters ==> margin: (Top)px (Right)px (Bottom)px;
+        With 2 parameters ==> margin: (Top)px (Right)px
+    2.- Padding properties are used to generate space around an element's content, inside of any
+        defined borders.
+
+/*; Sample of how to stylize the body tag */
+body {
+    margin: 0px;
+    font-size: 16px;
+}
+
+/*; Sample of how to stylize a class */
+.myHeader {
+    font-size: 56px;
+    color: #046A38;
+}
+
+/*; Sample of how to stylize a tag that has an "id=name" property */
+#topSection {
+    margin: 5px;
+    height: 90px;
+    padding-left: 2px;
+    background-color: #E0E0E0;
+}
+
