@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--;
+|*************************************************************************************************|
+| User Story:                                                                                     |
+|*************************************************************************************************|
+| Design a webpage using HTML, CSS, and JavaScript to let users answer trivia questions.          |
+|                                                                                                 |
+| 1.- In index.html, add beneath “Part 1” a multiple-choice trivia question of your choosing with |
+|     HTML.                                                                                       |
+|                                                                                                 |
+|   1.1.- You should use an h3 heading for the text of your question.                             |
+|                                                                                                 |
+|   1.2.- You should have one button for each of the possible answer choices. There should be at  |
+|         least three answer choices, of which exactly one should be correct.                     |
+|                                                                                                 |
+| 2.- Using JavaScript, add logic so that the buttons change colors when a user clicks on them.   |
+|                                                                                                 |
+|   2.1.- If a user clicks on a button with an incorrect answer, the button should turn red and   |
+|         text should appear beneath the question that says “Incorrect”.                          |
+|                                                                                                 |
+|   2.2.- If a user clicks on a button with the correct answer, the button should turn green and  |
+|         text should appear beneath the question that says “Correct!”.                           |
+|                                                                                                 |
+| 3.- In index.html, add beneath “Part 2” a text-based free response question of your choosing    |
+|     with HTML.                                                                                  |
+|                                                                                                 |
+|   3.1.- You should use an h3 heading for the text of your question.                             |
+|                                                                                                 |
+|   3.2.- You should use an input field to let the user type a response.                          |
+|                                                                                                 |
+|   3.3.- You should use a button to let the user confirm their answer.                           |
+|                                                                                                 |
+| 4.- Using JavaScript, add logic so that the text field changes color when a user confirms their |
+|     answer.                                                                                     |
+|                                                                                                 |
+|   4.1.- If the user types an incorrect answer and presses the confirmation button, the text     |
+|         field should turn red and text should appear beneath the question that says “Incorrect”.|
+|                                                                                                 |
+|   4.2.- If the user types the correct answer and presses the confirmation button, the input     |
+|         field should turn green and text should appear beneath the question that says           |
+|         “Correct!”.                                                                             |
+|                                                                                                 |
+| Optionally, you may also:                                                                       |
+|                                                                                                 |
+| 1.- Edit styles.css to change the CSS of your webpage!                                          |
+|                                                                                                 |
+| 2.- Add additional trivia questions to your trivia quiz if you would like!                      |
+|                                                                                                 |
+|                                                                                                 |
+|*************************************************************************************************|
+
+-->
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            /// We want to listen to buttons clicked but only when the entire page is loaded.
+            document.addEventListener("DOMContentLoaded", function() {
+                /// A reference to the only button of class "right".
+                let right = document.querySelector(".right");
+                /// Now, let's add a listener to sense a click event on any of the "right" class buttons
+                right.addEventListener("click", function(){
+                    right.style.backgroundColor = "green";
+                    right.style.color = "white";
+                    document.querySelector("#message1").innerHTML = "Correct!";
+                });
+
+                /// Now the wrong buttons.  Since there are many wrong buttons, we need to add listeners to
+                /// all buttons.  querySelectorAll, will return all of the items that have been assigned to
+                /// that class so we can iterate through all of them
+                let wrongButtons = document.querySelectorAll(".wrong");
+                /// Now we need to add a listener
+                for (var button of wrongButtons)
+                {
+                    button.addEventListener("click", function() {
+                        button.style.backgroundColor = "red";
+                        button.style.color = "yellow";
+                        document.querySelector("#message1").innerHTML = "Incorrect";
+                    });
+                }
+
+                /// In Switzerland, it is illegal to own a single guinea pig as they are considered very
+                /// social animals and recommend you have more than one always.
+                /// Get a reference to the "answerButton" and then add a listener
+                let answerCheck = document.querySelector("#answerButton");
+                answerCheck.addEventListener("click", function() {
+                    ///
+                    let text = document.getElementById("answer").value;
+                    text = text.toLowerCase();
+                    console.log(text);
+                    if (text == "switzerland") {
+                        document.querySelector("#answer").style.backgroundColor = "green";
+                        document.querySelector("#message2").innerHTML = "Correct!";
+                    }
+                    else
+                    {
+                        document.querySelector("#answer").style.backgroundColor = "red";
+                        document.querySelector("#message2").innerHTML = "Incorrect";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+
+                <!--; Now I want to create the buttons-->
+
+                <!--; I will assign all the wrong buttons to the class wrong so that we can tell-->
+                <!--; which button is right.  We could have used IDs but since there are so many-->
+                <!--; wrong buttons, we only want to do classes.-->
+                <button class="wrong">6 people to 1 sheep</button>
+                <button class="wrong">3 people to 1 sheep</button>
+                <button class="wrong">1 person to 1 sheep</button>
+                <button class="wrong">1 person to 3 sheep</button>
+                <button class="right">1 person to 6 sheep</button>
+
+                <p id="message1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely</h3>
+                <input id="answer" type="text"></input>
+                <button id="answerButton">Check Answer</button>
+                <p id="message2"></p>
+            </div>
+        </div>
+    </body>
+</html>
