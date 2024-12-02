@@ -1,0 +1,66 @@
+DROP TABLE transactions;
+
+CREATE TABLE transactions (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                           userid INTEGER NOT NULL,
+                           symbol TEXT NOT NULL,
+                           numberOfShares INTEGER NOT NULL,
+                           unitPrice NUMERIC NOT NULL,
+                           transactionAmount NUMERIC NOT NULL,
+                           transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                        FOREIGN KEY (userid) REFERENCES users(id) );
+
+CREATE INDEX transactionsUniqueIdx1 on transactions (userid);
+CREATE INDEX transactionsReg1 on transactions (userid, symbol);
+CREATE INDEX transactionsReg2 on transactions (userid, symbol, transactionDate);
+
+CREATE TABLE test1 (rowid INTEGER NOT NULL,
+                    userName TEXT NOT NULL);
+
+CREATE TABLE test2 (rowid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    userName TEXT NOT NULL);
+
+update SQLITE_SEQUENCE
+set seq = 10000
+where name ='test2'
+
+CREATE TABLE test3 (rowid INTEGER PRIMARY KEY NOT NULL,
+                    userName TEXT NOT NULL);
+
+CREATE TABLE test4 (rowid INTEGER PRIMARY KEY NOT NULL,
+                    userName TEXT UNIQUE NOT NULL);
+
+CREATE UNIQUE INDEX text401 on test4 (userName);
+
+CREATE TABLE test5 (name TEXT PRIMARY KEY NOT NULL,
+                    last TEXT NOT NULL);
+
+CREATE UNIQUE INDEX test501 on test5 (last);
+
+
+SELECT symbol, sum(numberOfShares)
+              FROM purchases
+             WHERE userid = 1
+             GROUP BY symbol;
+
+SELECT symbol, sum(numberOfShares) as totalShares
+                 FROM purchases
+                WHERE userid = 1
+             GROUP BY symbol
+             HAVING totalShares > 0
+             ORDER BY 1 ASC;
+
+
+SELECT symbol, sum(numberOfShares) as shares
+              FROM transactions
+             WHERE userid = 1
+          GROUP BY symbol
+            HAVING sum(numberOfShares) > 0;
+
+SELECT symbol,
+                  numberOfShares,
+                  unitPrice,
+                  transactionAmount,
+                  transactionDate
+             FROM transactions
+            WHERE userid = 1
+         ORDER BY transactionDate ASC;
