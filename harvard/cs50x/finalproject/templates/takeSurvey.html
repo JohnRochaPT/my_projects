@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block adminMenu %}
+    {% if admin == 'Y' %}
+        <a class="nav-item nav-link" href="/addSurveys">Add Surveys</a>
+     {% endif %}
+{% endblock %}
+
+{% block title %}
+    SmartShots Take Survey
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('takeSurvey') }}" method="post" align="left">
+        <select name="surveyid" id="surveyid" style="min-height:40px;min-width:300px;">
+            <option disabled selected value="">Select a survey</option>
+            {% for survey in surveyList %}
+                <option value="{{ survey.id }}">{{ survey.longname }}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-primary" type="submit">Take Survey</button>
+    </form>
+
+    {% if surveys %}
+        <main class="container py-5 text-center">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-start">Survey</th>
+                        <th class="text-start">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for survey in surveys %}
+                            <tr>
+                                <td class="text-start">{{ survey.surveyName }}</td>
+                                <td class="text-start">{{ survey.surveyLongName }}</td>
+                            </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    {% endif %}
+{% endblock %}

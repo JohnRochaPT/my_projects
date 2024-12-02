@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block adminMenu %}
+    {% if admin == 'Y' %}
+        <a class="nav-item nav-link" href="/addSurveys">Add Surveys</a>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    SmartShots Home
+{% endblock %}
+
+{% block main %}
+    <div class="container py-1" align="left">
+        <h3  align="left">
+            Welcome to SmartShots
+        </h3>
+        <br>
+        <div class="py-1" align="left">
+            <p>To view your surveys, click <a href="{{ url_for('surveys') }}">here</a></p>
+            <p>To take a survey, click <a href="{{ url_for('takeSurvey') }}">here</a></p>
+        </div>
+    </div>
+{% endblock %}

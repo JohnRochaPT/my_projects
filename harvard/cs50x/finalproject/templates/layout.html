@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <!--; My own copy of bootstrap -->
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+
+        <!--; My own css file -->
+        <link href="/static/css/styles.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+    <body>
+        <div>
+            <div>
+                <h5><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Smarts Shots Logo" class="logoImage"> SMART SHOTS</h5>
+            </div>
+            <header class="site-header">
+                <nav class="navbar navbar-expand-md navbar-dark bg-steel">
+                  <div class="container">
+                    <a class="navbar-brand mr-2" href="/">Home</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+                      <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="/surveys">My Surveys</a>
+                        <a class="nav-item nav-link" href="/takeSurvey">Complete Surveys</a>
+                      </div>
+                      <!-- Navbar Right Side -->
+                      <div class="navbar-nav ms-auto">
+                        <a class="nav-item nav-link" href="/login">Login</a>
+                        <a class="nav-item nav-link" href="/logout">Log Out</a>
+                        <a class="nav-item nav-link" href="/register">Register</a>
+                        {% block adminMenu %}{% endblock %}
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </header>
+        </div>
+        <main>
+            <div class="container py-3 text-center">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  {% for category, message in messages %}
+                    <div class="alert mb-1 alert-primary text-center alert-{{ category }}" role="alert">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+              <br>
+              {% block main %}{% endblock %}
+            </div>
+        </main>
+        <footer class="text-center" style="font-size: 75%">
+            <p>Smart Shots is a doctoral project developed by Joe Brusatto ©<span>Copyright</span> <span>All Rights Reserved</span></p>
+        </footer>
+
+        <!--; local copy of bootstrap-->
+        <script src="/static/js/bootstrap.js"></script>
+    </body>

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block adminMenu %}
+    {% if admin == 'Y' %}
+        <a class="nav-item nav-link" href="/addSurveys">Add Surveys</a>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    SmartShots Error
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <h1>
+            {{ messageTitle }}
+        </h1>
+        <p>
+            {{ messageDescription }}
+        </p>
+        To return to the previous page click <a href="#" onclick="history.go(-1)">Go Back</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+DROP TABLE user_surveys;
+DROP TABLE surveys;
+DROP TABLE users;
+
+CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    user_name TEXT NOT NULL,
+                    password TEXT NOT NULL,
+                    url_key VARCHAR(20) NOT NULL,
+                    is_admin BOOLEAN NOT NULL);
+
+CREATE UNIQUE INDEX users_unique_idx1 on users (user_name);
+
+select * from users;
+
+DROP TABLE surveys;
+
+CREATE TABLE surveys (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                      name TEXT NOT NULL,
+                      longname TEXT NOT NULL,
+                      url TEXT NOT NULL,
+                      active BOOLEAN NOT NULL);
+
+CREATE UNIQUE INDEX surveys_unique_idx1 on surveys (name);
+
+DROP TABLE user_surveys;
+
+CREATE TABLE user_surveys (user_id INTEGER NOT NULL,
+                           survey_id INTEGER NOT NULL,
+                           FOREIGN KEY (user_id) REFERENCES users(id),
+                           FOREIGN KEY (survey_id) REFERENCES surveys(id));
+
+CREATE UNIQUE INDEX user_surveys_unique_idx1 on user_surveys (user_id, survey_id);
+
+UPDATE users set is_admin = 'Y' WHERE id = 1;
+
+UPDATE surveys set status = 'Y';
+
+SELECT usrv.survey_id as surveyId,
+       srvy.name as surveyName,
+       srvy.longname as surveyLongName,
+       srvy.url as surveyUrl,
+       usr.url_key as userUrlPrefix
+  FROM user_surveys usrv
+    inner join surveys srvy on srvy.id = usrv.survey_id
+    inner join users usr on usr.id = usrv.user_id
+ WHERE usrv.user_id = 2;
+
+SELECT id, name, longname, url FROM surveys WHERE status = "Y"
+
+
+SELECT srv.id as id, srv.name as name, srv.longname as longname, srv.url as url
+             FROM surveys srv
+            WHERE srv.active = "Y"
+              AND srv.id NOT IN (SELECT usrv.survey_id
+                                   FROM user_surveys usrv
+                              WHERE usrv.survey_id = srv.id
+                                AND usrv.user_id = 2);
+
+DELETE FROM user_surveys;
+
+SELECT * from user_surveys;

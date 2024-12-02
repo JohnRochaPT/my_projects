@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block adminMenu %}
+    {% if admin == 'Y' %}
+        <a class="nav-item nav-link" href="/addSurveys">Add Surveys</a>
+    {% endif %}
+{% endblock %}
+{% block title %}
+    SmartShots Add Survey - Maintenance
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('addSurveys') }}" method="post" align="left">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="surveyname" placeholder="Survey Short Name" type="text" style="width: 100px; height: 40px">
+            <input autocomplete="off" name="longname" placeholder="Survey Long Name" type="text" style="width: 300px; height: 40px">
+            <input autocomplete="off" name="surveyurl" placeholder="Survey url" type="text" style="width: 300px; height: 40px">
+            <button class="btn btn-primary" type="submit" name="buttonAdd">Add Survey</button>
+        </div>
+        {% if surveys %}
+            <main class="container py-5 text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-start">ID</th>
+                            <th class="text-start">Short Name</th>
+                            <th class="text-start">Long Name</th>
+                            <th class="text-start">url</th>
+                            <th class="text-start">Active</th>
+                            <th class="text-start">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for survey in surveys %}
+                            <tr>
+                                <td class="text-start">{{ survey.id }}</td>
+                                <td class="text-start">{{ survey.name }}</td>
+                                <td class="text-start">{{ survey.longname }}</td>
+                                <td class="text-start">{{ survey.url }}</td>
+                                <td class="text-start">{{ survey.active }}</td>
+                                <td class="text-start">
+                                    <input name="inactivateSurvey" value="{{ survey.id }}" type="hidden"></input>
+                                    <button type="submit" name="buttonInactivate">Inactivate</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </main>
+        {% endif %}
+    </form>
+{% endblock %}

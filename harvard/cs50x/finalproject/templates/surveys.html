@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block adminMenu %}
+    {% if admin == 'Y' %}
+        <a class="nav-item nav-link" href="/addSurveys">Add Surveys</a>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    SmartShots My Surveys
+{% endblock %}
+
+{% block main %}
+    {% if surveys %}
+        <main class="container py-5 text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Survey</th>
+                            <th class="text-start">Description</th>
+                            <th class="text-start">Navigate To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for survey in surveys %}
+                            <tr>
+                                <td class="text-start">{{ survey.surveyName }}</td>
+                                <td class="text-start">{{ survey.surveyLongName }}</td>
+                                <td class="text-start">
+                                    <small>
+                                        <a href="{{ survey.survey_Url }}" > Link to survey</a>
+                                    </small>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </main>
+    {% endif %}
+{% endblock %}
